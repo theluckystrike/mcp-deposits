@@ -1,13 +1,45 @@
 # mcp-deposits
 
+<!-- mirror-seo:start -->
+
+**MCP server for security and retainer deposits.** Security and retainer deposits, held per client, on the same engine as your invoices.
+
+Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
+
+## Install
+
+**Hosted, nothing to install.** Point an MCP client at `https://mcp.zovo.one/mcp/deposits` over streamable-http and send `Authorization: Bearer <token>`, where the token is a Pro key or a free anonymous one from <https://mcp.zovo.one/mcp/token>.
+
+**Claude Desktop, one click.** Download `deposits.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it.
+
+**From source.** The mirror is self-contained: every `@theluckystrike/*` dependency is vendored, so a fresh clone builds with no extra setup.
+
+```sh
+git clone https://github.com/theluckystrike/mcp-deposits.git
+cd mcp-deposits
+npm install && npm run build
+```
+
+Then point your client at the built entry point:
+
+```json
+{
+  "mcpServers": {
+    "deposits": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-deposits/dist/index.js"]
+    }
+  }
+}
+```
+
+> `@theluckystrike/mcp-deposits` is **not published on npm yet**, so an `npx -y @theluckystrike/mcp-deposits` command will fail. The three paths above are the working ones and each is exercised by CI.
+
 ![deposits demo](https://raw.githubusercontent.com/theluckystrike/mcp-servers/main/assets/demo-deposits.gif)
-
-**One-click install:** download `deposits.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it in Claude Desktop.
-
-**Hosted endpoint (no install):** `https://mcp.zovo.one/mcp/deposits` (streamable-http; send `Authorization: Bearer <Pro key or anonymous token from https://mcp.zovo.one/mcp/token>`).
 
 Read-only mirror of [mcp-servers/servers/deposits](https://github.com/theluckystrike/mcp-servers/tree/main/servers/deposits). See [MIRROR.md](MIRROR.md).
 
+<!-- mirror-seo:end -->
 
 Security and retainer deposits, held per client, on the same engine as your invoices.
 
