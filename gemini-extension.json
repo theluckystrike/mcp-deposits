@@ -1,6 +1,6 @@
 {
   "name": "mcp-deposits",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "MCP server for security and retainer deposits. Security and retainer deposits, held per client, on the same engine as your invoices.",
   "settings": [
     {
